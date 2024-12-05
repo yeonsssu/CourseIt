@@ -1,0 +1,187 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; /* 좌우 스크롤 제거 */
+    display: flex;
+}
+
+header {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    height: 100vh;
+    width: 15vw; /* 사이드바 너비 */
+    min-width: 220px;
+    max-width: 320px;
+    position: fixed; /* 화면 왼쪽에 고정 */
+    top: 0;
+    left: 0;
+}
+
+#head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+#head ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 68px;
+}
+
+#head ul li {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    color: white;
+}
+
+#head ul li img {
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+}
+
+#head ul li a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+#logo img {
+    width: 180px;
+    height: 80px;
+    margin-top: 50px;
+    margin-bottom: 70px;
+}
+
+/* 사이드바 너비에 따른 마진 조정 */
+.main-container {
+    margin-left: 20vw; /* 사이드바 너비만큼 이동 */
+    width: 85%; /* 전체 너비의 85% 사용 */
+    max-width: 1200px; /* 최대 너비 설정 */
+    display: flex;
+    flex-direction: column; /* 세로 정렬 */
+    align-items: center; /* 중앙 정렬 */
+    margin-top: 30px;
+    overflow-y: auto;
+}
+
+/* 제목 */
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    color: #bf80ff;
+}
+
+/* 포스터와 전시 정보 나란히 배치 */
+.top-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    width: 100%;
+}
+
+/* 포스터 */
+.poster img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 전시 정보 */
+.details {
+    flex: 1;
+}
+
+.details h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.details ul {
+    list-style: none;
+    padding: 0;
+    font-size: 1em;
+    line-height: 1.8;
+    color: #666;
+}
+
+.details li strong {
+    color: #333;
+}
+
+/* 소개 섹션 */
+.description {
+    width: 100%; /* 전체 너비 사용 */
+    margin-top: 30px;
+}
+
+.description h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.description p {
+    font-size: 1em;
+    line-height: 1.8;
+    color: #666;
+}
+
+/* 추가 UI 섹션 스타일 */
+.additional-info {
+    width: 100%;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.additional-info h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.additional-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1em;
+    color: #666;
+}
+
+.additional-info ul li {
+    margin-bottom: 10px;
+    line-height: 1.8;
+}
+
+.additional-info ul li strong {
+    color: #333;
+}
+
+.address, .contact {
+    margin-top: 20px;
+}
+
+.address p, .contact p {
+    font-size: 1em;
+    color: #666;
+    line-height: 1.5;
+}
