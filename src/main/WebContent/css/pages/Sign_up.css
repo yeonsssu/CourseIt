@@ -21,6 +21,14 @@ body {
     max-width: 400px;
 }
 
+.feedback {
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: red; /* 기본은 빨간색으로 설정 */
+}
+
+
+
 /* 로고 스타일 */
 #logo {
     text-align: center;

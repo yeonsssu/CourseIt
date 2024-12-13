@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,10 +6,12 @@
     <title>Search Bar</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=9d4fdebbd05e105355e69928d6b9cb28&libraries=services"></script>
+	<link rel="stylesheet" type="text/css" href="css/pages/addMember.css">
 </head>
 <body>
+   <%@ include file="/resource/common/Header.jsp" %>
 <div class="container">
-    <h3>참석자 추가</h3>
+    <h3>참석자 추가👤</h3>
     <div class="input-group">
         <input type="text" id="nameInput" placeholder="참석자 이름 입력">
     </div>

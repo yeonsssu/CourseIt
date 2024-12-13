@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="css/pages/EditMyProfile.css">
 </head>
 <body>
+
     <div class="sign_up-container">
         <!-- 로고 -->
         <div id="logo">
@@ -54,5 +55,33 @@
             </div>
         </form>
     </div>
+
+    <!-- 비밀번호 확인 JavaScript -->
+    <script>
+        document.querySelector("#pwdre").addEventListener("input", function () {
+            const password = document.querySelector("#userPw").value.trim();
+            const confirmPassword = document.querySelector("#pwdre").value.trim();
+            const feedback = document.querySelector("#pwdreFeedback");
+
+            if (confirmPassword === "") {
+                feedback.textContent = ""; // 비워진 경우 피드백 제거
+            } else if (password === confirmPassword) {
+                feedback.textContent = "비밀번호가 일치합니다.";
+                feedback.style.color = "green";
+            } else {
+                feedback.textContent = "비밀번호가 일치하지 않습니다.";
+                feedback.style.color = "red";
+            }
+        });
+
+        document.querySelector("form").addEventListener("submit", function (event) {
+            const password = document.querySelector("#userPw").value.trim();
+            const confirmPassword = document.querySelector("#pwdre").value.trim();
+            if (password !== confirmPassword) {
+                event.preventDefault();
+                alert("비밀번호가 일치하지 않습니다. 다시 확인해주세요.");
+            }
+        });
+    </script>
 </body>
 </html>

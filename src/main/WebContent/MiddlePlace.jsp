@@ -7,82 +7,27 @@
 <html>
 <head>
     <title>중간 지점 찾기</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <style>
-        body {
-            background-color: #f4f4f4;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        .container {
-            background-color: #ffffff;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin: 20px auto;
-            max-width: 800px;
-        }
-        .collection-item {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            background-color: #f9f9f9;
-            border-radius: 4px;
-            margin-bottom: 10px;
-            padding: 10px 15px;
-        }
-        .collection-item div {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            width: 100%;
-            justify-content: space-between;
-        }
-        .collection-item h2 {
-            font-size: 1.2em;
-            margin: 0;
-            color: #333;
-            display: inline;
-            margin-right: 5px;
-        }
-        .collection-item span {
-            margin: 0 5px;
-            border-left: 1px solid #ccc;
-            padding-left: 5px;
-        }
-        .collection-item p {
-            margin: 0;
-            color: #777;
-            display: inline;
-        }
-        .collection-item .secondary-content {
-            color: #e57373;
-            cursor: pointer;
-        }
-        .collection-item .secondary-content i {
-            font-size: 24px;
-        }
-        .btn {
-            margin: 10px 0;
-        }
-        .collection {
-            margin-top: 20px;
-        }
-    </style>
+	<link rel="stylesheet" type="text/css" href="css/pages/MiddlePlace.css">
 </head>
 <body>
+	  <%@ include file="/resource/common/Header.jsp" %>
     <div class="container">
         <h3 class="center">중간 지점 찾기</h3>
 
         <!-- 데이터베이스에서 가져온 사용자 목록 표시 -->
-        <h4>데이터베이스에 저장된 사용자 목록</h4>
+        <h4>"모두가 모이기 딱 좋은 곳은 어디일까요? 바로 찾아보세요!"</h4>
         <ul class="collection" id="dbMembersList"></ul>
+        <a>
+    <img src="img/MiddlePlace/middleplace.png" alt="중간 지점 이미지" class="middleplace-image">
+</a>
+
 
         <!-- 참석자 추가 버튼 -->
-        <button class="btn waves-effect waves-light" onclick="addMember()">Add Member</button>
+        <button class="btn btn-add" onclick="addMember()">친구 추가하기</button>
 
         <!-- 중간 지점 찾기 버튼 -->
-        <button class="btn waves-effect waves-light" onclick="findMidpoint()">중간 지점 찾기</button>
+        <button class="btn btn-find" onclick="findMidpoint()">중간 지점 찾기</button>
     </div>
 
     <script>

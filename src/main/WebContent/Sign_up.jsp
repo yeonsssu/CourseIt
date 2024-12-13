@@ -3,10 +3,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>회원가입</title>
-<link rel="stylesheet" type="text/css" href="css/pages/Sign_up.css">
-
+    <meta charset="UTF-8">
+    <title>회원가입</title>
+    <link rel="stylesheet" type="text/css" href="css/pages/Sign_up.css">
 </head>
 <body>
     <div class="sign_up-container">
@@ -23,22 +22,22 @@
         <form name="signUpForm" method="post" action="<%= request.getContextPath() %>/signUp.do">
             <!-- 아이디 입력 -->
             <div class="form-group">
-			    <label for="userId">아이디 *</label>
-			    <input type="text" id="userId" name="userId" placeholder="4~16자 영문/숫자만 허용" required>
-			    <button type="button" class="check-btn">중복 확인</button>
-			    <span id="userIdFeedback" class="feedback"></span>
-			</div>
+                <label for="userId">아이디 *</label>
+                <input type="text" id="userId" name="userId" placeholder="4~16자 영문/숫자만 허용" required>
+                <button type="button" class="check-btn">중복 확인</button>
+                <span id="userIdFeedback" class="feedback"></span>
+            </div>
             <!-- 비밀번호 입력 -->
             <div class="form-group">
                 <label for="userPw">비밀번호 *</label>
                 <input type="password" id="userPw" name="userPw" placeholder="영문, 숫자 조합 8~16자" required>
             </div>
             <!-- 비밀번호 확인 -->
-				<div class="form-group">
-				    <label for="pwdre">비밀번호 확인 *</label>
-				    <input type="password" id="pwdre" name="pwdre" placeholder="비밀번호를 한 번 더 입력하세요" required>
-				    <span id="pwdreFeedback" class="feedback"></span>
-				</div>
+            <div class="form-group">
+                <label for="pwdre">비밀번호 확인 *</label>
+                <input type="password" id="pwdre" name="pwdre" placeholder="비밀번호를 한 번 더 입력하세요" required>
+                <span id="pwdreFeedback" class="feedback"></span>
+            </div>
             <!-- 닉네임 -->
             <div class="form-group">
                 <label for="userName">닉네임 *</label>
@@ -56,5 +55,63 @@
             </div>
         </form>
     </div>
+
+    <!-- JavaScript 추가 -->
+    <script>
+        // 아이디 중복 확인
+        document.querySelector(".check-btn").addEventListener("click", function () {
+            const userId = document.querySelector("#userId").value.trim();
+
+            if (!userId) {
+                document.querySelector("#userIdFeedback").innerText = "아이디를 입력해주세요.";
+                document.querySelector("#userIdFeedback").style.color = "red";
+                return;
+            }
+
+            fetch("<%= request.getContextPath() %>/idCheck.do?userId=" + encodeURIComponent(userId))
+                .then(response => response.json())
+                .then(data => {
+                    if (data.isDuplicate) {
+                        document.querySelector("#userIdFeedback").innerText = "이미 사용 중인 아이디입니다.";
+                        document.querySelector("#userIdFeedback").style.color = "red";
+                    } else {
+                        document.querySelector("#userIdFeedback").innerText = "사용 가능한 아이디입니다.";
+                        document.querySelector("#userIdFeedback").style.color = "green";
+                    }
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                    document.querySelector("#userIdFeedback").innerText = "오류가 발생했습니다.";
+                    document.querySelector("#userIdFeedback").style.color = "red";
+                });
+        });
+
+        // 비밀번호 확인
+        document.querySelector("#pwdre").addEventListener("input", function () {
+            const password = document.querySelector("#userPw").value.trim();
+            const confirmPassword = document.querySelector("#pwdre").value.trim();
+            const feedback = document.querySelector("#pwdreFeedback");
+
+            if (confirmPassword === "") {
+                feedback.textContent = ""; // 비워진 경우 피드백 제거
+            } else if (password === confirmPassword) {
+                feedback.textContent = "비밀번호가 일치합니다.";
+                feedback.style.color = "green";
+            } else {
+                feedback.textContent = "비밀번호가 일치하지 않습니다.";
+                feedback.style.color = "red";
+            }
+        });
+
+        // 폼 제출 시 비밀번호 확인
+        document.querySelector("form").addEventListener("submit", function (event) {
+            const password = document.querySelector("#userPw").value.trim();
+            const confirmPassword = document.querySelector("#pwdre").value.trim();
+            if (password !== confirmPassword) {
+                event.preventDefault();
+                alert("비밀번호가 일치하지 않습니다. 다시 확인해주세요.");
+            }
+        });
+    </script>
 </body>
 </html>

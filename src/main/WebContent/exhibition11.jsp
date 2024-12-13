@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="css/exhibition.css">
+<link rel="stylesheet" type="text/css" href="css/pages/exhibition.css">
 <title>exhibition page</title>
 </head>
 <body>
