@@ -8,9 +8,9 @@ import java.sql.ResultSet;
 public class JDBCUtil {
 
     private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
-    private static final String URL = "jdbc:mysql://localhost:3306/courseItDB?serverTimezone=UTC&useSSL=false&useUnicode=true&characterEncoding=utf-8";
+    private static final String URL = "jdbc:mysql://localhost:3306/backend?serverTimezone=UTC&useSSL=false&useUnicode=true&characterEncoding=utf-8";
     private static final String USERNAME = "root";
-    private static final String PASSWORD = "password";
+    private static final String PASSWORD = "dongyang";
 
     public static Connection getConnection() {
         try {

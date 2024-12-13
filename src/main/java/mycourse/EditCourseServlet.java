@@ -13,9 +13,9 @@ import java.sql.SQLException;
 
 @WebServlet("/EditCourseServlet")
 public class EditCourseServlet extends HttpServlet {
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/coursedb?useSSL=false&serverTimezone=UTC";
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/backend?useSSL=false&serverTimezone=UTC";
     private static final String DB_USER = "root"; // 데이터베이스 사용자명
-    private static final String DB_PASSWORD = "1234"; // 데이터베이스 비밀번호
+    private static final String DB_PASSWORD = "dongyang"; // 데이터베이스 비밀번호
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -31,26 +31,26 @@ public class UserDAO {
         return loginCon;
     }	
     
-    public boolean idCheck(String userId) {// 로그인, 회원가입 아이디 중복 확인
-    	Connection conn = null;
+    public boolean idCheck(String userId) {
+        Connection conn = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
-        boolean loginCon = false;
+        boolean isDuplicate = false;
         try {
-			conn = JDBCUtil.getConnection();
-            String strQuery = "select userId from users where userId = ?";
-
-            pstmt = conn.prepareStatement(strQuery);
+            conn = JDBCUtil.getConnection();
+            String query = "SELECT userId FROM user WHERE userId = ?";
+            pstmt = conn.prepareStatement(query);
             pstmt.setString(1, userId);
             rs = pstmt.executeQuery();
-            loginCon = rs.next();
+            isDuplicate = rs.next();
         } catch (Exception ex) {
-            System.out.println("Exception" + ex);
+            ex.printStackTrace();
         } finally {
-        	JDBCUtil.close(rs, pstmt, conn);
+            JDBCUtil.close(rs, pstmt, conn);
         }
-        return loginCon;
-    }	
+        return isDuplicate;
+    }
+	
 	
 	
     public boolean userInsert(UserDTO uDTO) {
@@ -184,10 +184,5 @@ public class UserDAO {
         }
         return isDeleted;
     }
-
-
-
-
-	
 
 }

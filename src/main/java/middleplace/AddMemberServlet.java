@@ -14,9 +14,9 @@ import java.sql.PreparedStatement;
 @WebServlet("/AddMemberServlet")
 public class AddMemberServlet extends HttpServlet {
     // 데이터베이스 연결 정보
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/coursedb"; // 데이터베이스 URL
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/backend"; // 데이터베이스 URL
     private static final String DB_USER = "root"; // 데이터베이스 사용자명
-    private static final String DB_PASSWORD = "1234"; // 데이터베이스 비밀번호
+    private static final String DB_PASSWORD = "dongyang"; // 데이터베이스 비밀번호
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)

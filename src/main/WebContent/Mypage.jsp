@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <title>마이프로필</title>
-    <link rel="stylesheet" type="text/css" href="/ProjectCourseit/css/pages/myPage.css">
+    <link rel="stylesheet" type="text/css" href="css/pages/myPage.css">
 </head>
 <body>
     <%@ include file="/resource/common/Header.jsp" %>

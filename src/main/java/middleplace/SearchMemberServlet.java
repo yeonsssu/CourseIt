@@ -17,12 +17,13 @@ import com.google.gson.Gson;
 
 @WebServlet("/SearchMemberServlet")
 public class SearchMemberServlet extends HttpServlet {
+	
     private static final long serialVersionUID = 1L;
 
     // 데이터베이스 연결 정보
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/coursedb";
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/backend";
     private static final String DB_USER = "root";
-    private static final String DB_PASSWORD = "1234";
+    private static final String DB_PASSWORD = "dongyang";
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)

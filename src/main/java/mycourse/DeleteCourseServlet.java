@@ -21,9 +21,9 @@ import mycourse.CourseServlet.Marker;
 
 @WebServlet("/DeleteCourseServlet")
 public class DeleteCourseServlet extends HttpServlet {
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/coursedb?useSSL=false&serverTimezone=UTC";
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/backend?useSSL=false&serverTimezone=UTC";
     private static final String DB_USER = "root";
-    private static final String DB_PASSWORD = "1234";
+    private static final String DB_PASSWORD = "dongyang";
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

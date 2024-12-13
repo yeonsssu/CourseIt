@@ -9,9 +9,9 @@ import java.util.*;
 
 @WebServlet("/FindMidpointServlet")
 public class FindMidpointServlet extends HttpServlet {
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/coursedb";
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/backend";
     private static final String DB_USER = "root";
-    private static final String DB_PASSWORD = "1234";
+    private static final String DB_PASSWORD = "dongyang";
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -22,13 +22,13 @@ public class FindMidpointServlet extends HttpServlet {
         
         try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
              Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery("SELECT name, latitude, longitude FROM members")) {
-            
+             ResultSet rs = stmt.executeQuery("SELECT name, latitude, longitude FROM members")){
             while (rs.next()) {
                 String name = rs.getString("name");
                 double latitude = rs.getDouble("latitude");
                 double longitude = rs.getDouble("longitude");
                 Map<String, Object> memberData = new HashMap<>();
+                System.out.println("Retrieved member: Name=" + name + ", Latitude=" + latitude + ", Longitude=" + longitude);
                 memberData.put("name", name);
                 memberData.put("latitude", latitude);
                 memberData.put("longitude", longitude);

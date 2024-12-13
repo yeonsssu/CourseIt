@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <link rel="stylesheet" type="text/css" href="/ProjectCourseit/css/common/header.css">
 
-<header>
+<header class="fixed-header">
     <div id="top">
         <!-- 로고 영역 -->
         <section id="logo">
@@ -13,6 +13,7 @@
             <%
                 String userId = (String) session.getAttribute("userId"); // 세션에서 userId 가져오기
                 if (userId == null) {
+                	
                     // 로그아웃 상태
             %>
             <a href="<%= request.getContextPath() %>/Login.jsp">로그인</a> |
@@ -42,3 +43,4 @@
 
     </div>
 </header>
+

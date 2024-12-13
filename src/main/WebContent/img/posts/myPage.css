@@ -5,18 +5,22 @@ body, html {
     font-family: Arial, sans-serif;
     background-color: #f4f4f9; /* 배경 색상 */
     color: #333; /* 기본 텍스트 색상 */
+    min-height: 100vh; /* 최소 높이를 설정하여 푸터가 하단에 고정되도록 함 */
+    display: flex;
+    flex-direction: column;
 }
 
 /* 좌측 네비게이션 여백 고려 */
 main {
     margin-left: 15vw; /* 좌측 네비게이션 너비만큼 여백 추가 */
+    flex: 1; /* 메인을 확장하여 푸터가 아래로 밀리도록 함 */
     padding: 20px;
 }
 
 /* 마이프로필 섹션 스타일 */
 #MypageBody {
-    max-width: 800px; /* 최대 너비 */
-    margin: 100px auto; /* 화면 가운데 정렬 (상단 여백 포함) */
+    width: calc(100% - 22vw); /* 전체 너비에서 사이드바를 제외한 폭 */
+    margin: 50px auto; /* 화면 가운데 정렬 (상단 여백 포함) */
     padding: 20px; /* 내부 여백 */
     background-color: #ffffff; /* 배경 색상 */
     border: 1px solid #ddd; /* 경계선 */
@@ -56,3 +60,5 @@ main {
 .button:hover {
     background-color: #218838;
 }
+
+
