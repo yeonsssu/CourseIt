@@ -17,7 +17,7 @@ import java.util.List;
 public class GetCourseServlet extends HttpServlet {
     private static final String DB_URL = "jdbc:mysql://localhost:3306/coursedb?useSSL=false&serverTimezone=UTC";
     private static final String DB_USER = "root";
-    private static final String DB_PASSWORD = "1234";
+    private static final String DB_PASSWORD = "passworrd";
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

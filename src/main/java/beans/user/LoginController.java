@@ -15,23 +15,26 @@ public class LoginController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // 요청 파라미터에서 사용자 입력 데이터 가져오기
         String userId = request.getParameter("userId");
         String userPw = request.getParameter("userPw");
 
-        // DAO 객체 생성 및 로그인 검증
         UserDAO userDAO = new UserDAO();
         boolean isValidUser = userDAO.loginCheck(userId, userPw);
 
         if (isValidUser) {
-            // 로그인 성공: 세션에 사용자 정보 저장
+            String userName = userDAO.getUserName(userId); // 닉네임 가져오기
+            String profileImage = userDAO.getUserProfileImage(userId); // 프로필 이미지 가져오기
+
             HttpSession session = request.getSession();
-            session.setAttribute("userId", userId); // 세션에 userId 저장
+            session.setAttribute("userId", userId);
+            session.setAttribute("userName", userName);
+            session.setAttribute("profileImage", profileImage); // 프로필 이미지 세션에 저장
+
             response.sendRedirect(request.getContextPath() + "/Main.jsp");
         } else {
-            // 로그인 실패: 에러 메시지를 설정하고 로그인 페이지로 포워드
             request.setAttribute("errorMessage", "아이디 또는 비밀번호가 일치하지 않습니다.");
             request.getRequestDispatcher("/Login.jsp").forward(request, response);
         }
     }
+
 }

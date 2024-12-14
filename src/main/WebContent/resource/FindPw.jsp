@@ -5,13 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <title>비밀번호 찾기</title>
-<link rel="stylesheet" type="text/css" href="css/FindPw.css">
+<link rel="stylesheet" type="text/css" href="/ProjectCourseit/css/pages/FindPw.css">
 </head>
 <body>
     <div class="pw-container">
         <div id="logo">
             <a href="Main.jsp">
-                <img src="img/headerImg/logoMain.png" alt="코스잇 메인 로고">
+                <img src="/ProjectCourseit/img/headerImg/logoMain.png" alt="코스잇 메인 로고">
             </a>
         </div>
         <h1>비밀번호 찾기</h1><hr>

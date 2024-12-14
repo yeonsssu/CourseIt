@@ -40,10 +40,9 @@
             <input type="submit" value="로그인"><br><br><hr>
         </form>
         <div class="footer">
-            <!--
-            <a href="./FindPw.jsp">비밀번호 찾기</a> |
-            <a href="./FindId.jsp">아이디 찾기</a> 
-            -->
+            <a href="/ProjectCourseit/resource/FindId.jsp">아이디 찾기</a>         	
+            |
+			<a href="/ProjectCourseit/resource/FindPw.jsp">비밀번호 찾기</a> 
             |
             <a href="/ProjectCourseit/Sign_up.jsp">회원 가입</a> 
         </div>

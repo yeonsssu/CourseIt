@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" session="true" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +7,7 @@
 <title> course it! Main page </title>
 </head>
 <body>
-    <%@ include file="/resource/common/Header.jsp" %>
+    <%@ include file="resource/common/Header.jsp" %>
 
     
     <section id="main">
@@ -29,25 +29,25 @@
 					    </a>
 					</div>
 	                <div class="post">
-					    <a href="post2.jsp">
+					    <a href="">
 					        <img src="img/posts/post2.jpg" alt="서울근교 가을나들이">
 					        <div class="post-text">가을 나들이 가기 좋은<br> 서울 근교 사진 명소</div>
 					    </a>
 					</div>					
 	                <div class="post">
-					    <a href="post3.jsp">
+					    <a href="">
 					        <img src="img/posts/post3.jpg" alt="시드니 명소">
 					        <div class="post-text">시드니에서 꼭!<br> 들러야하는 필수 코스!!</div>
 					    </a>
 					</div>
 					<div class="post">
-					    <a href="post4.jsp">
+					    <a href="">
 					        <img src="img/posts/post4.jpg" al="서울 크리스마스 행사">
 					        <div class="post-text">서울 크리스마스<br> 행사일정</div>
 					    </a>
 					</div>	
 					<div class="post">
-					    <a href="post5.jsp">
+					    <a href="">
 					        <img src="img/posts/post5.jpg" alt="가을 단풍 드라이브">
 					        <div class="post-text">드라이브 하기 좋은<br> 가을 단풍 길</div>
 					    </a>
@@ -60,13 +60,13 @@
 		    <section id="exhibition-info">
 			    <div class="exhibition-header">
 			        <h2>12월의 전시, 행사 일정</h2>
-			        <a href="exhibition.jsp" class="view-all">전체보기 ▶</a>
+			        <a href="/ProjectCourseit/RealExhibition.jsp" class="view-all">전체보기 ▶</a>
 			    </div>
 			    
 			    <div class="exhibition-grid">
 			        <!-- 전시행사 아이템 예시 (8개 표시) -->
 			        <div class="exhibition-item">
-			            <a href="detail1.jsp">
+			            <a href="https://tickets.interpark.com/goods/24013928">
 			                <img src="img/exhibition1.jpg" alt="지킬앤하이드">
 			                <div class="exhibition-info">
 			                    <span class="type">뮤지컬</span>
@@ -77,7 +77,7 @@
 			            </a>
 			        </div>
 			        <div class="exhibition-item">
-			            <a href="detail1.jsp">
+			            <a href="https://tickets.interpark.com/goods/24012498">
 			                <img src="img/exhibition2.jpg" alt="알라딘">
 			                <div class="exhibition-info">
 			                    <span class="type">뮤지컬</span>
@@ -88,7 +88,7 @@
 			            </a>
 			        </div>
 			        <div class="exhibition-item">
-			            <a href="detail1.jsp">
+			            <a href="https://tickets.interpark.com/goods/24002802">
 			                <img src="img/exhibition3.jpg" alt="불편한 편의점">
 			                <div class="exhibition-info">
 			                    <span class="type">연극</span>
@@ -99,7 +99,7 @@
 			            </a>
 			        </div>
 			        <div class="exhibition-item">
-			            <a href="detail1.jsp">
+			            <a href="https://tickets.interpark.com/goods/24011855">
 			                <img src="img/exhibition4.jpg" alt="디즈니 100년 기념전">
 			                <div class="exhibition-info">
 			                    <span class="type">전시회</span>
@@ -110,7 +110,7 @@
 			            </a>
 			        </div>
 			        <div class="exhibition-item">
-			            <a href="detail1.jsp">
+			            <a href="https://tickets.interpark.com/goods/24013237">
 			                <img src="img/exhibition5.jpg" alt="기억의순환">
 			                <div class="exhibition-info">
 			                    <span class="type">전시회</span>
@@ -121,7 +121,7 @@
 			            </a>
 			        </div>
 			        <div class="exhibition-item">
-			            <a href="detail1.jsp">
+			            <a href="https://tickets.interpark.com/goods/24011935">
 			                <img src="img/exhibition6.jpg" alt="광화문연가">
 			                <div class="exhibition-info">
 			                    <span class="type">뮤지컬</span>
@@ -132,7 +132,7 @@
 			            </a>
 			        </div>
 			        <div class="exhibition-item">
-			            <a href="detail1.jsp">
+			            <a href="https://tickets.interpark.com/goods/24013174">
 			                <img src="img/exhibition7.jpg" alt="우연히 웨스 앤더슨 2">
 			                <div class="exhibition-info">
 			                    <span class="type">전시회</span>
@@ -143,7 +143,7 @@
 			            </a>
 			        </div>
 			        <div class="exhibition-item">
-			            <a href="detail1.jsp">
+			            <a href="https://tickets.interpark.com/goods/22014277">
 			                <img src="img/exhibition8.jpg" alt="한뼘사이">
 			                <div class="exhibition-info">
 			                    <span class="type">연극</span>

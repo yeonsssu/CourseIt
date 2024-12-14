@@ -1,5 +1,6 @@
 package beans.user;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.*;
@@ -184,6 +185,57 @@ public class UserDAO {
         }
         return isDeleted;
     }
+    
+    public String getUserName(String userId) {
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        String userName = null;
+
+        try {
+            conn = JDBCUtil.getConnection(); // 데이터베이스 연결
+            String query = "SELECT userName FROM user WHERE userId = ?";
+            pstmt = conn.prepareStatement(query);
+            pstmt.setString(1, userId);
+            rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                userName = rs.getString("userName"); // userName 컬럼 값 가져오기
+            }
+        } catch (Exception ex) {
+            System.out.println("Exception: " + ex.getMessage());
+        } finally {
+            JDBCUtil.close(rs, pstmt, conn); // 리소스 정리
+        }
+
+        return userName; // 닉네임 반환
+    }
+
+    public String getUserProfileImage(String userId) {
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        String profileImage = null;
+
+        try {
+            conn = JDBCUtil.getConnection();
+            String query = "SELECT profileImage FROM user WHERE userId = ?";
+            pstmt = conn.prepareStatement(query);
+            pstmt.setString(1, userId);
+            rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                profileImage = rs.getString("profileImage"); // 프로필 이미지 컬럼 값 가져오기
+            }
+        } catch (Exception ex) {
+            System.out.println("Exception: " + ex.getMessage());
+        } finally {
+            JDBCUtil.close(rs, pstmt, conn);
+        }
+
+        return profileImage;
+    }
+
 
 
 
